@@ -42,3 +42,9 @@ jobs:
       - name: Build and test
         # Debug build only since release builds require a signing key
         run: ./gradlew --no-daemon build zipDebug -x assembleRelease
+
+- name: Upload Build Artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: build-output
+    path: build/   
