@@ -41,10 +41,10 @@ jobs:
 
       - name: Build and test
         # Debug build only since release builds require a signing key
-        run: ./gradlew build zipDebug
+        run: ./gradlew zipDebug
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-output
-          path: build/   
+          path: app/build/
